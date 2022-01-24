@@ -40,7 +40,7 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG Dockerfile
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
         
     - name: Build, tag, and push image to Amazon ECR
       env:
@@ -49,7 +49,7 @@ jobs:
         IMAGE_TAG: ${{ github.sha }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f dockerfile1 .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG dockerfile1
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
        
         
    
